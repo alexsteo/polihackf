@@ -4,6 +4,7 @@ import { createStore } from 'redux';
 import Root from './components/Root';
 
 import rootReducer from './store/reducer';
+import NotificationsService from './components/Notifications';
 const store = createStore(rootReducer);
 
 export default function App() {
@@ -13,3 +14,5 @@ export default function App() {
     </Provider>
   );
 }
+
+{/* <NotificationsService></NotificationsService> */ }
