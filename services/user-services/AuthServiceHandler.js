@@ -12,5 +12,5 @@ export const loginUser = async userBody => {
     throw new Error('Invalid credentials!');
   }
 
-  await AsyncStorage.setItem('user', JSON.stringify(user));
+  return user;
 };

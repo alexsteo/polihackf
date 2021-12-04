@@ -1,7 +1,7 @@
-import React from "react";
-import { FlatList, View, Text, StyleSheet } from "react-native";
-import { Card } from "react-native-shadow-cards";
-import { TouchableOpacity } from "react-native";
+import React from 'react';
+import { FlatList, View, Text, StyleSheet } from 'react-native';
+import { Card } from 'react-native-shadow-cards';
+import { TouchableOpacity } from 'react-native';
 
 const QuestionAnswersList = props => {
   return (
@@ -34,17 +34,17 @@ const styles = StyleSheet.create({
     paddingVertical: 20,
   },
   flatListStyle: {
-    top: "35%",
+    top: '35%',
     flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   questionStyle: {
     top: -150,
     paddingHorizontal: 5,
-    textAlign: "center",
+    textAlign: 'center',
     fontSize: 36,
-    color: "#105657",
+    color: '#105657',
   },
   cardStyle: {
     padding: 25,

@@ -1,16 +1,10 @@
 import React from "react";
-import { Text, View } from "react-native";
+import { Text, View, StyleSheet } from "react-native";
 
 const Tip = ({ tip }) => {
+  console.log(tip);
 
-    console.log(tip);
-
-    return (
-        <View>
-            <Text>{tip.title}</Text>
-            <Text>{tip.description}</Text>
-        </View>
-    )
-}
+  return <Card iconDisable title={tip.title} description={tip.description} />;
+};
 
 export default Tip;
