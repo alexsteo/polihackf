@@ -1,4 +1,9 @@
-import { LOGIN, LOGOUT, REGISTER } from '../actions/types';
+import {
+  LOGIN,
+  LOGOUT,
+  REGISTER,
+  ANSWER_PROCESSING_START,
+} from '../actions/types';
 
 const INIT_STATE = {
   user: null,
@@ -13,6 +18,8 @@ const authReducer = (state = INIT_STATE, action) => {
       return { ...state, user: action.payload };
     case LOGOUT:
       return { ...state, user: null };
+    case ANSWER_PROCESSING_START:
+      return { ...state, register: false };
     default:
       return state;
   }
