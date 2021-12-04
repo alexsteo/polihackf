@@ -41,7 +41,8 @@ export const fetchUsers = async () => {
         resData[key].firstName,
         resData[key].lastName,
         resData[key].password,
-        resData[key].email
+        resData[key].email,
+        resData[key].score
       )
     );
   }
@@ -49,12 +50,19 @@ export const fetchUsers = async () => {
   return users;
 };
 
-const updateUser = (user) => {
+export const updateUser = (user) => {
 
-  u = JSON.stringify({ score: user.score });
+  u = JSON.stringify({
+    score: user.score,
+    username: user.username,
+    firstName: user.firstName,
+    lastName: user.lastName,
+    password: user.password,
+    email: user.email
+  });
   u = `{"${user.key}" : ${u}}`;
 
-  fetch(`https://pulihack-default-rtdb.europe-west1.firebasedatabase.app/habit_user.json`,
+  fetch(`https://pulihack-default-rtdb.europe-west1.firebasedatabase.app/users.json`,
     {
       method: 'PATCH',
       headers: {
@@ -62,5 +70,5 @@ const updateUser = (user) => {
       },
       body: u,
     }
-  ).then(res => res.json()).then(data => { })
+  ).then(res => res.json()).then(data => { }).catch(err => console.log(err))
 }
