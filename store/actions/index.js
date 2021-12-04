@@ -1,4 +1,10 @@
-import { LOGIN, LOGOUT, REGISTER } from './types';
+import {
+  LOGIN,
+  LOGOUT,
+  REGISTER,
+  ANSWER_PROCESSING_START,
+  ANSWER_PROCESSING_DONE,
+} from './types';
 
 export const register = user => {
   return {
@@ -17,5 +23,17 @@ export const login = user => {
 export const logout = () => {
   return {
     type: LOGOUT,
+  };
+};
+
+export const answerProcessing = () => {
+  return {
+    type: ANSWER_PROCESSING_START,
+  };
+};
+
+export const answerProcessingDone = () => {
+  return {
+    type: ANSWER_PROCESSING_START,
   };
 };
