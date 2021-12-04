@@ -3,6 +3,7 @@ import { useEffect, useState, useRef } from 'react';
 import { View, Text, Button } from 'react-native'
 import * as Notifications from 'expo-notifications';
 import Constants from 'expo-constants';
+import { fetchActiveHabitsForUsers } from '../services/habit-services/HabitService';
 
 Notifications.setNotificationHandler({
     handleNotification: async () => ({
@@ -12,7 +13,7 @@ Notifications.setNotificationHandler({
     }),
 });
 
-const NotificationsService = () => {
+const NotificationsService = ({ user }) => {
     const [expoPushToken, setExpoPushToken] = useState('');
     const [notification, setNotification] = useState(false);
     const notificationListener = useRef();
@@ -46,10 +47,12 @@ const NotificationsService = () => {
 }
 
 async function schedulePushNotification() {
+    let activeHabits = fetchActiveHabitsForUsers(user);
+    const activeHabit = activeHabits[Math.floor(Math.random() * activeHabits.length)];
     await Notifications.scheduleNotificationAsync({
         content: {
-            title: "You've got mail! 📬",
-            body: 'Here is the notification body',
+            title: activeHabit.title,
+            body: activeHabit.description,
             data: { data: 'goes here' },
         },
         trigger: { seconds: 2 },
