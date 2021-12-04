@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { StyleSheet, Dimensions, Text, View, Share } from "react-native";
 import { Ionicons } from '@expo/vector-icons';
 import { updateHabit } from '../../services/habit-services/HabitService';
+import { updateUser } from '../../services/user-services/UserServiceHandler';
 
 var width = Dimensions.get("window").width; //full width
 let height = 60;
@@ -27,7 +28,9 @@ const Habit = ({ habit }) => {
 
     const doHabit = () => {
         habit.rating++;
+        user.score++;
         updateHabit(habit);
+        updateUser(user);
         setShowLike(!showLike);
         reset(!set);
     }

@@ -48,3 +48,19 @@ export const fetchUsers = async () => {
 
   return users;
 };
+
+const updateUser = (user) => {
+
+  u = JSON.stringify({ score: user.score });
+  u = `{"${user.key}" : ${u}}`;
+
+  fetch(`https://pulihack-default-rtdb.europe-west1.firebasedatabase.app/habit_user.json`,
+    {
+      method: 'PATCH',
+      headers: {
+        'Content-type': 'application/json',
+      },
+      body: u,
+    }
+  ).then(res => res.json()).then(data => { })
+}
