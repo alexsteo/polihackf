@@ -1,18 +1,18 @@
-import React from 'react';
-import { StyleSheet, Text, View, Button } from 'react-native';
+import React from "react";
+import { StyleSheet, Text, View, Button } from "react-native";
 
 export default function App() {
   const callTest = async () => {
     const response = await fetch(
-      'https://pulihack-default-rtdb.europe-west1.firebasedatabase.app/user.json',
+      "https://pulihack-default-rtdb.europe-west1.firebasedatabase.app/user.json",
       {
-        method: 'POST',
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          username: 'user1',
-          description: 'plm',
+          username: "user1",
+          description: "plm",
         }),
       }
     );
@@ -20,7 +20,7 @@ export default function App() {
   return (
     <View style={styles.container}>
       <Text>Open up App.js to start working on your app!</Text>
-      <Button title="Go" onPress={callTest} />
+      <Button title='Go' onPress={callTest} />
     </View>
   );
 }
@@ -28,8 +28,8 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: "#fff",
+    alignItems: "center",
+    justifyContent: "center",
   },
 });
