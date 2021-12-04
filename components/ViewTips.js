@@ -1,28 +1,28 @@
-import React, { useEffect, useState } from "react";
-import { Card } from "@paraboly/react-native-card";
+import React, { useEffect, useState } from 'react';
+import { Card } from '@paraboly/react-native-card';
 import GestureRecognizer, {
   swipeDirections,
-} from "react-native-swipe-gestures";
+} from 'react-native-swipe-gestures';
 import {
   View,
   StyleSheet,
   ImageBackground,
   Dimensions,
   Text,
-} from "react-native";
-import forest_image from "../images/forest2.png";
-import { fetchTips } from "../services/tips-service/TipsServiceHandler";
-import Tip from "./Tip";
+} from 'react-native';
+import forest_image from '../images/forest2.png';
+import { fetchTips } from '../services/tips-service/TipsServiceHandler';
+import Tip from './Tip';
 
-var width = Dimensions.get("window").width;
-var height = Dimensions.get("window").height;
+var width = Dimensions.get('window').width;
+var height = Dimensions.get('window').height;
 
 let index = 0;
 
 const ViewTipsList = () => {
   const [tipsList, setTipsList] = useState([]);
-  const [cardTitle, setCardTitle] = useState("");
-  const [cardDescription, setCardDescription] = useState("");
+  const [cardTitle, setCardTitle] = useState('');
+  const [cardDescription, setCardDescription] = useState('');
 
   const caca = async () => {
     const response = await fetchTips();
@@ -63,7 +63,7 @@ const ViewTipsList = () => {
       <View style={styles.container}>
         <ImageBackground
           source={forest_image}
-          resizeMode='cover'
+          resizeMode="cover"
           style={imageStyle}
           blurRadius={1}
         >
@@ -85,19 +85,19 @@ const ViewTipsList = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
+    alignItems: 'center',
+    justifyContent: 'center',
     borderRadius: 2,
   },
 
   imageStyle: {
-    paddingTop: "80%",
-    alignItems: "center",
-    justifyContent: "center",
+    paddingTop: '80%',
+    alignItems: 'center',
+    justifyContent: 'center',
     width: width,
     height: height + 100,
     flex: 1,
-    justifyContent: "center",
+    justifyContent: 'center',
   },
 });
 
