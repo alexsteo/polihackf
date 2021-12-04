@@ -5,6 +5,8 @@ import { Ionicons } from '@expo/vector-icons';
 import { createMaterialBottomTabNavigator } from 'react-navigation-material-bottom-tabs';
 
 //* screens
+import RegisterScreen from '../screens/RegisterScreen';
+import LoginScreen from '../screens/LoginScreen';
 
 const tabScreenConfig = {
   Login: {
