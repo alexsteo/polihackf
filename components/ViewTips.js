@@ -25,6 +25,7 @@ const ViewTipsList = () => {
 
   const caca = async () => {
     const response = await fetchTips();
+    console.log(response);
     setTipsList(response);
     setCardTitle(response[0].title);
     setCardDescription(response[0].description);

@@ -14,16 +14,16 @@ var width = Dimensions.get('window').width; //full width
 var height = Dimensions.get('window').height; //full height
 
 const SpinnerThingy = () => {
-  const dispatch = useDispatch();
-  useEffect(() => {
-    const timerId = setTimeout(() => {
-      dispatch(answerProcessingDone());
-    }, 5000);
+  // const dispatch = useDispatch();
+  // useEffect(() => {
+  //   const timerId = setTimeout(() => {
+  //     dispatch(answerProcessingDone());
+  //   }, 2500);
 
-    return () => {
-      clearTimeout(timerId);
-    };
-  }, []);
+  //   return () => {
+  //     clearTimeout(timerId);
+  //   };
+  // }, []);
   return (
     <View style={[styles.container, styles.horizontal]}>
       <ImageBackground
@@ -32,7 +32,9 @@ const SpinnerThingy = () => {
         style={styles.imageStyle}
         blurRadius={1}
       >
-        <ActivityIndicator size="large" color="blue" />
+        <View style={{ position: 'absolute', top: 0, left: 0 }}>
+          <ActivityIndicator size="large" color="blue" />
+        </View>
       </ImageBackground>
     </View>
   );

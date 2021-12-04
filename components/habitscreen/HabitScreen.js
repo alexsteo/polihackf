@@ -1,19 +1,22 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from 'react';
 import {
   FlatList,
   ImageBackground,
   StyleSheet,
   Dimensions,
-} from "react-native";
-import Users from "../../entities/Users";
-import { fetchHabitsForUsers } from "../../services/habit-services/HabitService";
-import Habit from "./Habit";
-import forest_image from "../../images/forest2.png";
+} from 'react-native';
+import Users from '../../entities/Users';
+import { fetchHabitsForUsers } from '../../services/habit-services/HabitService';
+import Habit from './Habit';
+import forest_image from '../../images/forest2.png';
+import { useSelector } from 'react-redux';
 
-var width = Dimensions.get("window").width; //full width
-var height = Dimensions.get("window").height; //full height
+var width = Dimensions.get('window').width; //full width
+var height = Dimensions.get('window').height; //full height
 
 const HabitScreen = () => {
+  const user = useSelector(state => state.auth.user);
+
   useEffect(() => {
     initializeHabits();
   }, []);
@@ -22,7 +25,14 @@ const HabitScreen = () => {
 
   const initializeHabits = async () => {
     let hab = await fetchHabitsForUsers(
-      new Users("-Mq4GF3cOflGrD4kUdaf", "asd", "sad", "dasda", "asds", "dasd")
+      new Users(
+        user.key,
+        user.username,
+        user.firstName,
+        user.lastName,
+        user.password,
+        user.email
+      )
     );
     setHabits(hab);
   };
@@ -32,7 +42,7 @@ const HabitScreen = () => {
   return (
     <ImageBackground
       source={forest_image}
-      resizeMode='cover'
+      resizeMode="cover"
       style={styles.imageStyle}
       blurRadius={1}
     >
@@ -48,9 +58,9 @@ const HabitScreen = () => {
 const styles = StyleSheet.create({
   imageStyle: {
     paddingHorizontal: 25,
-    paddingTop: "25%",
-    alignItems: "center",
-    justifyContent: "center",
+    paddingTop: '25%',
+    alignItems: 'center',
+    justifyContent: 'center',
     width: width,
     height: height + 100,
     flex: 1,
