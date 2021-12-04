@@ -3,7 +3,7 @@ import { StyleSheet, View, Dimensions, ImageBackground } from 'react-native';
 import React, { useState } from 'react';
 import QuestionAnswersList from './QuestionAnswersList';
 import { useDispatch } from 'react-redux';
-import { answer } from '../store/actions';
+import { answerProcessing } from '../store/actions';
 
 var width = Dimensions.get('window').width; //full width
 var height = Dimensions.get('window').height; //full height
@@ -82,7 +82,7 @@ const QuestionCard = () => {
     ) {
       generateNewQuestion(5);
     } else {
-      dispatch(answer());
+      dispatch(answerProcessing());
     }
   };
 

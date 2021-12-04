@@ -34,6 +34,6 @@ export const answerProcessing = () => {
 
 export const answerProcessingDone = () => {
   return {
-    type: ANSWER_PROCESSING_START,
+    type: ANSWER_PROCESSING_DONE,
   };
 };
