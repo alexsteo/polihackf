@@ -1,24 +1,41 @@
 import React, { useState } from 'react';
-import { StyleSheet, View, Dimensions, ImageBackground } from 'react-native';
-import { addUsers } from '../services/user-services/UserServiceHandler';
+import {
+  StyleSheet,
+  View,
+  Dimensions,
+  ImageBackground,
+  AsyncStorage,
+} from 'react-native';
 import { Form, FormItem } from 'react-native-form-component';
+import { loginUser } from '../services/user-services/AuthServiceHandler';
 
 import forest_image from '../images/forest2.png';
 
 var width = Dimensions.get('window').width; //full width
 var height = Dimensions.get('window').height; //full height
 
-const RegisterForm = () => {
-  const [user, setNewUser] = useState({
-    email: '',
+const LoginForm = () => {
+  const [user, setCurrentUser] = useState({
+    username: '',
     password: '',
   });
+
   const handleFieldChange = (key, input) => {
-    setNewUser({ ...user, [key]: input });
+    setCurrentUser({ ...user, [key]: input });
   };
+
+  const viewLoggedUser = async () => {
+    let user = await AsyncStorage.getItem('user');
+    let parsed = JSON.parse(user);
+    console.log(parsed);
+  };
+
   const onSubmitForm = () => {
-    addUsers(user);
+    console.log(user);
+    loginUser(user);
+    viewLoggedUser();
   };
+
   return (
     <View>
       <ImageBackground
@@ -35,6 +52,7 @@ const RegisterForm = () => {
             shadowOpacity: 0.25,
           }}
           buttonTextStyle={{ color: '#105657' }}
+          buttonText="Login"
         >
           <FormItem
             placeholder="Username"
@@ -44,34 +62,6 @@ const RegisterForm = () => {
             onChangeText={text => handleFieldChange('username', text)}
             style={inputStyle}
           />
-
-          <FormItem
-            placeholder="First name"
-            isRequired
-            value={user.firstName}
-            name="firstName"
-            onChangeText={text => handleFieldChange('firstName', text)}
-            style={inputStyle}
-          />
-
-          <FormItem
-            placeholder="Last name"
-            isRequired
-            value={user.lastName}
-            name="lastName"
-            onChangeText={text => handleFieldChange('lastName', text)}
-            style={inputStyle}
-          />
-
-          <FormItem
-            placeholder="Email"
-            isRequired
-            value={user.email}
-            name="email"
-            onChangeText={text => handleFieldChange('email', text)}
-            style={inputStyle}
-          />
-
           <FormItem
             placeholder="Password"
             isRequired
@@ -95,7 +85,7 @@ const styles = StyleSheet.create({
   },
 
   imageStyle: {
-    paddingTop: '60%',
+    paddingTop: '80%',
     alignItems: 'center',
     justifyContent: 'center',
     width: width,
@@ -108,4 +98,4 @@ const styles = StyleSheet.create({
 const inputStyle = StyleSheet.compose(styles.inputStyle);
 const imageStyle = StyleSheet.compose(styles.imageStyle);
 
-export default RegisterForm;
+export default LoginForm;

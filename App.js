@@ -1,16 +1,9 @@
 import React from "react";
-import { StyleSheet, Text, View, Button } from "react-native";
-import RegisterForm from "./components/RegisterForm";
-import SomeComponent from "./screens/swipeTest";
+import { View, Text, StyleSheet } from "react-native";
+import HomeNavigator from "./navigation/HomeNavigator";
 
 export default function App() {
-  return (
-    <View style={styles.container}>
-      <View>
-        <RegisterForm />
-      </View>
-    </View>
-  );
+  return <HomeNavigator />;
 }
 
 const styles = StyleSheet.create({
