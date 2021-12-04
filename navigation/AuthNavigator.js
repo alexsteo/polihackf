@@ -8,6 +8,9 @@ import { createMaterialBottomTabNavigator } from 'react-navigation-material-bott
 import TipsScreen from '../screens/TipsScreen';
 import NewTipsScreen from '../screens/NewTipScreen';
 import HabitScreen from '../components/habitscreen/HabitScreen';
+import RewardsPage from '../components/RewardsPage';
+import TreePage from '../components/TreePage';
+
 const tabScreenConfig = {
   Habits: {
     screen: HabitScreen,
@@ -39,22 +42,22 @@ const tabScreenConfig = {
       },
     },
   },
-  // Points: {
-  //   screen: PointsScreen,
-  //   navigationOptions: {
-  //     tabBarIcon: tabInfo => {
-  //       return <Ionicons name="leaf" size={25} style={styles.icon} />;
-  //     },
-  //   },
-  // },
-  // Rewards: {
-  //   screen: RewardsScreen,
-  //   navigationOptions: {
-  //     tabBarIcon: tabInfo => {
-  //       return <Ionicons name="trophy" size={25} style={styles.icon} />;
-  //     },
-  //   },
-  // },
+  Points: {
+    screen: TreePage,
+    navigationOptions: {
+      tabBarIcon: tabInfo => {
+        return <Ionicons name="leaf" size={25} style={styles.icon} />;
+      },
+    },
+  },
+  Rewards: {
+    screen: RewardsPage,
+    navigationOptions: {
+      tabBarIcon: tabInfo => {
+        return <Ionicons name="trophy" size={25} style={styles.icon} />;
+      },
+    },
+  },
 };
 
 const AuthNavigator = createMaterialBottomTabNavigator(tabScreenConfig, {
