@@ -1243,11 +1243,6 @@
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
 
-"@paraboly/react-native-card@^1.0.3":
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/@paraboly/react-native-card/-/react-native-card-1.0.3.tgz#81a31c2bf7e53a6be1ff7ca23ead42ca6eacdd47"
-  integrity sha512-/Zj1vW8K91MXV3xGsXcuNLcF/V8dIRwQAYX16idjh2GQ4oyBADeQ2oiiXOHM1Yi/TUaCRO5QHQ0EDJbDPEPwkw==
-
 "@react-native-community/cli-debugger-ui@^5.0.1":
   version "5.0.1"
   resolved "https://registry.yarnpkg.com/@react-native-community/cli-debugger-ui/-/cli-debugger-ui-5.0.1.tgz#6b1f3367b8e5211e899983065ea2e72c1901d75f"

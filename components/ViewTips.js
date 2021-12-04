@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { Card } from '@paraboly/react-native-card';
 import GestureRecognizer, {
   swipeDirections,
 } from 'react-native-swipe-gestures';
@@ -12,7 +11,7 @@ import {
 } from 'react-native';
 import forest_image from '../images/forest2.png';
 import { fetchTips } from '../services/tips-service/TipsServiceHandler';
-import Tip from './Tip';
+import CardTip from './CardTip';
 
 var width = Dimensions.get('window').width;
 var height = Dimensions.get('window').height;
@@ -72,7 +71,7 @@ const ViewTipsList = () => {
             config={config}
             style={{ flex: 1 }}
           >
-            <Card iconDisable title={cardTitle} description={cardDescription} />
+            <CardTip title={cardTitle} description={cardDescription} />
           </GestureRecognizer>
         </ImageBackground>
       </View>
