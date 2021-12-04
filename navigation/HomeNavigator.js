@@ -8,6 +8,7 @@ import { createMaterialBottomTabNavigator } from 'react-navigation-material-bott
 import RegisterScreen from '../screens/RegisterScreen';
 import LoginScreen from '../screens/LoginScreen';
 import TipsScreen from '../screens/TipsScreen';
+import NewTipsScreen from '../screens/NewTipScreen';
 
 const tabScreenConfig = {
   Login: {
@@ -33,6 +34,14 @@ const tabScreenConfig = {
     navigationOptions: {
       tabBarIcon: tabInfo => {
         return <Ionicons name="information" size={25} style={styles.icon} />;
+      },
+    },
+  },
+  NewTips: {
+    screen: NewTipsScreen,
+    navigationOptions: {
+      tabBarIcon: tabInfo => {
+        return <Ionicons name="add-circle" size={25} style={styles.icon} />;
       },
     },
   },
