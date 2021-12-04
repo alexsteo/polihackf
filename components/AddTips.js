@@ -44,12 +44,14 @@ const NewTipsForm = () => {
           onChangeText={text => handleFieldChange("title", text)}
           value={tip.title}
           name='title'
+          style={inputStyle}
         />
         <FormItem
           placeholder='Description'
           onChangeText={text => handleFieldChange("description", text)}
           value={tip.description}
           name='description'
+          style={inputStyle}
         />
       </Form>
       </ImageBackground>
@@ -59,6 +61,8 @@ const NewTipsForm = () => {
 
 const styles = StyleSheet.create({
   inputStyle: {
+    borderRadius: 25,
+    width: 225,
     opacity: 0.9,
   },
 
