@@ -37,7 +37,7 @@ const HabitScreen = () => {
     setHabits(hab);
   };
 
-  const createHabitComponent = ({ item }) => <Habit habit={item} />;
+  const createHabitComponent = ({ item }) => <Habit habit={item} user={user} />;
 
   return (
     <ImageBackground
