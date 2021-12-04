@@ -6,16 +6,16 @@ import SomeComponent from "./screens/swipeTest";
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <SomeComponent />
+      <RegisterForm />
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
+    paddingTop: "50%",
     flex: 1,
-    backgroundColor: "#fff",
+    backgroundColor: "#CCDCC8",
     alignItems: "center",
     justifyContent: "center",
   },

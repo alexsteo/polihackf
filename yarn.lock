@@ -4536,6 +4536,11 @@ react-native-elements@^3.4.2:
     react-native-ratings "8.0.4"
     react-native-size-matters "^0.3.1"
 
+react-native-form-component@^2.2.4:
+  version "2.2.4"
+  resolved "https://registry.yarnpkg.com/react-native-form-component/-/react-native-form-component-2.2.4.tgz#6d618e62ad6e39afc5e2a5a8cb5923317c482be7"
+  integrity sha512-ywykgy2ACxaTs9qJZq3TEodkRYajYkOHaE/lhhN8qQQWKCwWLz0Xo6fiExcqgUvbmi68r9AR6BJUBrD4A1ZCvw==
+
 react-native-ratings@8.0.4:
   version "8.0.4"
   resolved "https://registry.yarnpkg.com/react-native-ratings/-/react-native-ratings-8.0.4.tgz#efd5ebad8acc08bf98d34d39b18fb7a6813ef991"
