@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { StyleSheet, View, Dimensions, ImageBackground } from 'react-native';
 import { addUsers } from '../services/user-services/UserServiceHandler';
 import { Form, FormItem } from 'react-native-form-component';
+import { useDispatch } from 'react-redux';
+import { register } from '../store/actions';
 
 import forest_image from '../images/forest2.png';
 
@@ -13,11 +15,15 @@ const RegisterForm = () => {
     email: '',
     password: '',
   });
+
+  const dispatch = useDispatch();
+
   const handleFieldChange = (key, input) => {
     setNewUser({ ...user, [key]: input });
   };
-  const onSubmitForm = () => {
-    addUsers(user);
+  const onSubmitForm = async () => {
+    const userAdded = await addUsers(user);
+    dispatch(register(userAdded));
   };
   return (
     <View>

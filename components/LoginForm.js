@@ -1,13 +1,9 @@
 import React, { useState } from 'react';
-import {
-  StyleSheet,
-  View,
-  Dimensions,
-  ImageBackground,
-  AsyncStorage,
-} from 'react-native';
+import { StyleSheet, View, Dimensions, ImageBackground } from 'react-native';
 import { Form, FormItem } from 'react-native-form-component';
 import { loginUser } from '../services/user-services/AuthServiceHandler';
+import { useDispatch } from 'react-redux';
+import { login } from '../store/actions';
 
 import forest_image from '../images/forest2.png';
 
@@ -20,20 +16,15 @@ const LoginForm = () => {
     password: '',
   });
 
+  const dispatch = useDispatch();
+
   const handleFieldChange = (key, input) => {
     setCurrentUser({ ...user, [key]: input });
   };
 
-  const viewLoggedUser = async () => {
-    let user = await AsyncStorage.getItem('user');
-    let parsed = JSON.parse(user);
-    console.log(parsed);
-  };
-
-  const onSubmitForm = () => {
-    console.log(user);
-    loginUser(user);
-    viewLoggedUser();
+  const onSubmitForm = async () => {
+    const userToLog = await loginUser(user);
+    dispatch(login(userToLog));
   };
 
   return (

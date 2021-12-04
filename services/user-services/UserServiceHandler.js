@@ -15,6 +15,8 @@ export const addUsers = async user => {
   if (!response.ok) {
     throw new Error('Something went wrong!');
   }
+
+  return user;
 };
 
 export const fetchUsers = async () => {
