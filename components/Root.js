@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux';
 import HomeNavigator from '../navigation/HomeNavigator';
 import AuthNavigator from '../navigation/AuthNavigator';
 import QuestionAnswersScreen from '../screens/QuestionAnswersScreen';
+import SpinnerThingy from './SpinnerThingy';
 
 const Root = () => {
   const auth = useSelector(state => state.auth);
@@ -15,7 +16,7 @@ const Root = () => {
   }
 
   if (answers) {
-    console.log('...');
+    return <SpinnerThingy />;
   }
 
   if (auth.user) {
