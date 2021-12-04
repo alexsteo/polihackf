@@ -9,5 +9,10 @@ const store = createStore(rootReducer);
 import SpinnerThingy from "./components/SpinnerThingy";
 
 export default function App() {
-  return <SpinnerThingy />;
+  return (
+    <Provider store={store}>
+      <Root />
+    </Provider>
+    // <SpinnerThingy />
+  );
 }
