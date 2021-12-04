@@ -1,15 +1,15 @@
-import React from "react";
-import HomeNavigator from "./navigation/HomeNavigator";
-import { View, Text, StyleSheet } from "react-native";
+import React from 'react';
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
+import Root from './components/Root';
+
+import rootReducer from './store/reducer';
+const store = createStore(rootReducer);
 
 export default function App() {
-  return <HomeNavigator />;
+  return (
+    <Provider store={store}>
+      <Root />
+    </Provider>
+  );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
-  },
-});

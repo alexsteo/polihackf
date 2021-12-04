@@ -16,13 +16,13 @@
     "react": "17.0.1",
     "react-dom": "17.0.1",
     "react-native": "0.64.3",
+    "react-native-elements": "^3.4.2",
+    "react-native-form-component": "^2.2.4",
     "react-native-gesture-handler": "~1.10.2",
     "react-native-paper": "^4.10.0",
     "react-native-reanimated": "^2.1.0",
-    "react-native-screens": "~3.8.0",
-    "react-native-elements": "^3.4.2",
-    "react-native-form-component": "^2.2.4",
     "react-native-safe-area-context": "^3.3.2",
+    "react-native-screens": "~3.8.0",
     "react-native-shadow-cards": "^1.0.2",
     "react-native-slider": "^0.11.0",
     "react-native-swipe-gestures": "^1.0.5",
@@ -31,7 +31,9 @@
     "react-navigation": "^4.4.4",
     "react-navigation-header-buttons": "^6.3.1",
     "react-navigation-material-bottom-tabs": "^2.3.4",
-    "react-navigation-tabs": "^2.11.1"
+    "react-navigation-tabs": "^2.11.1",
+    "react-redux": "^7.2.6",
+    "redux": "^4.1.2"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9"
