@@ -1187,6 +1187,11 @@
     lodash.pick "^4.4.0"
     lodash.template "^4.5.0"
 
+"@freakycoder/react-native-bounceable@^0.2.5":
+  version "0.2.5"
+  resolved "https://registry.yarnpkg.com/@freakycoder/react-native-bounceable/-/react-native-bounceable-0.2.5.tgz#ad61bdafbf68465e9c2145e99c09b500ae091f0e"
+  integrity sha512-J8WBOYxbm/um7SqXYneduZ08T5Kin9z+ixsS3wOLtpeNvKscuqmDEgsgefTYydeSIoI5dOfWmklnRRgu5i/8nA==
+
 "@hapi/hoek@^9.0.0":
   version "9.2.1"
   resolved "https://registry.yarnpkg.com/@hapi/hoek/-/hoek-9.2.1.tgz#9551142a1980503752536b5050fd99f4a7f13b17"
@@ -1237,6 +1242,11 @@
   dependencies:
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
+
+"@paraboly/react-native-card@^1.0.3":
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/@paraboly/react-native-card/-/react-native-card-1.0.3.tgz#81a31c2bf7e53a6be1ff7ca23ead42ca6eacdd47"
+  integrity sha512-/Zj1vW8K91MXV3xGsXcuNLcF/V8dIRwQAYX16idjh2GQ4oyBADeQ2oiiXOHM1Yi/TUaCRO5QHQ0EDJbDPEPwkw==
 
 "@react-native-community/cli-debugger-ui@^5.0.1":
   version "5.0.1"
@@ -1998,6 +2008,11 @@ ci-info@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/ci-info/-/ci-info-2.0.0.tgz#67a9e964be31a51e15e5010d58e6f12834002f46"
   integrity sha512-5tK7EtrZ0N+OLFMthtqOj4fI2Jeb88C4CAZPu25LDVUgXJ0A3Js4PMGqrn0JU1W0Mh1/Z8wZzYPxqUrXeBboCQ==
+
+clamp@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/clamp/-/clamp-1.0.1.tgz#66a0e64011816e37196828fdc8c8c147312c8634"
+  integrity sha1-ZqDmQBGBbjcZaCj9yMjBRzEshjQ=
 
 class-utils@^0.3.5:
   version "0.3.6"
@@ -4593,6 +4608,16 @@ react-lifecycles-compat@^3.0.4:
   resolved "https://registry.yarnpkg.com/react-lifecycles-compat/-/react-lifecycles-compat-3.0.4.tgz#4f1a273afdfc8f3488a8c516bfda78f872352362"
   integrity sha512-fBASbA6LnOU9dOU2eW7aQ8xmYBSXUIWr+UmF9b1efZBazGNO+rcXT/icdKnYm2pTwcRylVUYwW7H1PHfLekVzA==
 
+react-native-androw@^0.0.34:
+  version "0.0.34"
+  resolved "https://registry.yarnpkg.com/react-native-androw/-/react-native-androw-0.0.34.tgz#5c4214b155946004a57916619a518974ebd96b36"
+  integrity sha512-YuW0GxYNzABvPPe6k+JdLUF5CAzKSW5R6IxxA/+fg5gc+4avE1tZgLmnRfNtXJCbW9r90YLYp33S9Uu2pe//fg==
+
+react-native-cards-swipe@^1.0.5:
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/react-native-cards-swipe/-/react-native-cards-swipe-1.0.5.tgz#60974f307f5003fe621fd075fd91289a6a07a372"
+  integrity sha512-uIOoQ23YXV1stINH+RuRcXTzBkpq1sQ80S51WYaszMQWMd1g43S0tqmLeb0bHIWS1PgL0eJfq/SHqVUzfCZ5iA==
+
 react-native-codegen@^0.0.6:
   version "0.0.6"
   resolved "https://registry.yarnpkg.com/react-native-codegen/-/react-native-codegen-0.0.6.tgz#b3173faa879cf71bfade8d030f9c4698388f6909"
@@ -4601,6 +4626,11 @@ react-native-codegen@^0.0.6:
     flow-parser "^0.121.0"
     jscodeshift "^0.11.0"
     nullthrows "^1.1.1"
+
+react-native-dynamic-vector-icons@^1.1.6:
+  version "1.1.6"
+  resolved "https://registry.yarnpkg.com/react-native-dynamic-vector-icons/-/react-native-dynamic-vector-icons-1.1.6.tgz#a032cf647eb6934cbec56562deda772ca073ac67"
+  integrity sha512-tz098Wv/4TI70BRWfshSyVzWsoV4PRdp6fMMA7GRmxsaERfYshEy3Rs3bvD9tVjD+zKUcmM4Ce7bmAoJkGSNdg==
 
 react-native-elements@^3.4.2:
   version "3.4.2"
@@ -4698,6 +4728,14 @@ react-native-slider@^0.11.0:
   integrity sha512-jV9K87eu9uWr0uJIyrSpBLnCKvVlOySC2wynq9TFCdV9oGgjt7Niq8Q1A8R8v+5GHsuBw/s8vEj1AAkkUi+u+w==
   dependencies:
     prop-types "^15.5.6"
+
+react-native-swipe-cards@^0.1.1:
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/react-native-swipe-cards/-/react-native-swipe-cards-0.1.1.tgz#25a31b450f2616f3a25a101c9fc37ccbb2deb3e2"
+  integrity sha1-JaMbRQ8mFvOiWhAcn8N8y7Les+I=
+  dependencies:
+    clamp "^1.0.1"
+    prop-types "^15.6.0"
 
 react-native-swipe-gestures@^1.0.5:
   version "1.0.5"
