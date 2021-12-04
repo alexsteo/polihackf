@@ -1,19 +1,26 @@
-import React, { useState } from 'react';
-import { StyleSheet, View, Dimensions, ImageBackground } from 'react-native';
-import { Form, FormItem } from 'react-native-form-component';
-import { loginUser } from '../services/user-services/AuthServiceHandler';
-import { useDispatch } from 'react-redux';
-import { login } from '../store/actions';
+import React, { useState } from "react";
+import {
+  StyleSheet,
+  View,
+  Dimensions,
+  ImageBackground,
+  Image,
+} from "react-native";
+import { Form, FormItem } from "react-native-form-component";
+import { loginUser } from "../services/user-services/AuthServiceHandler";
+import { useDispatch } from "react-redux";
+import { login } from "../store/actions";
 
-import forest_image from '../images/forest2.png';
+import forest_image from "../images/forest2.png";
+import our_amazing_logo from "../images/logo.png";
 
-var width = Dimensions.get('window').width; //full width
-var height = Dimensions.get('window').height; //full height
+var width = Dimensions.get("window").width; //full width
+var height = Dimensions.get("window").height; //full height
 
 const LoginForm = () => {
   const [user, setCurrentUser] = useState({
-    username: '',
-    password: '',
+    username: "",
+    password: "",
   });
 
   const dispatch = useDispatch();
@@ -31,34 +38,35 @@ const LoginForm = () => {
     <View>
       <ImageBackground
         source={forest_image}
-        resizeMode="cover"
+        resizeMode='cover'
         style={imageStyle}
         blurRadius={1}
       >
+        <Image source={our_amazing_logo} style={styles.logoStyle} />
         <Form
           onButtonPress={onSubmitForm}
           buttonStyle={{
-            backgroundColor: '#EDEAC2',
-            shadowColor: '#000',
+            backgroundColor: "#EDEAC2",
+            shadowColor: "#000",
             shadowOpacity: 0.25,
           }}
-          buttonTextStyle={{ color: '#105657' }}
-          buttonText="Login"
+          buttonTextStyle={{ color: "#105657" }}
+          buttonText='Login'
         >
           <FormItem
-            placeholder="Username"
+            placeholder='Username'
             isRequired
             value={user.username}
-            name="username"
-            onChangeText={text => handleFieldChange('username', text)}
+            name='username'
+            onChangeText={text => handleFieldChange("username", text)}
             style={inputStyle}
           />
           <FormItem
-            placeholder="Password"
+            placeholder='Password'
             isRequired
             value={user.password}
-            name="password"
-            onChangeText={text => handleFieldChange('password', text)}
+            name='password'
+            onChangeText={text => handleFieldChange("password", text)}
             secureTextEntry={true}
             style={inputStyle}
           />
@@ -76,13 +84,18 @@ const styles = StyleSheet.create({
   },
 
   imageStyle: {
-    paddingTop: '80%',
-    alignItems: 'center',
-    justifyContent: 'center',
+    paddingTop: "20%",
+    alignItems: "center",
+    justifyContent: "center",
     width: width,
     height: height + 100,
     flex: 1,
-    justifyContent: 'center',
+    justifyContent: "center",
+  },
+  logoStyle: {
+    marginBottom: 50,
+    width: "40%",
+    height: "40%",
   },
 });
 

@@ -22,13 +22,13 @@ const imageData = require('../assets/imageData.json');
 const Item = ({ reward }) => (
   <View style={{ marginTop: 50, flexDirection: 'row' }}>
     <Image
-      style={{ flex: 1 }}
-      source={{ uri: imageData[reward.img], width: 180, height: 180 }}
+      style={{ flex: 1, width: 80, height: 80, resizeMode: 'contain' }}
+      source={{ uri: imageData[reward.img] }}
     />
     <View style={{ flex: 1 }}>
-      <Text>{reward.name}</Text>
-      <Text>{reward.description}</Text>
-      <Text>{reward.price}</Text>
+      <Text>Name: {reward.name}</Text>
+      <Text>Description: {reward.description}</Text>
+      <Text>Price: {reward.points}</Text>
     </View>
     <TouchableOpacity style={styles.btnContainer}>
       <Text>Buy</Text>
@@ -41,6 +41,7 @@ const RewardsPage = () => {
 
   useEffect(async () => {
     setRewards(await fetchRewards());
+    console.log(rewards);
   }, []);
 
   return (

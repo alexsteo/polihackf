@@ -7,7 +7,7 @@ import { updateUser } from '../../services/user-services/UserServiceHandler';
 var width = Dimensions.get('window').width; //full width
 let height = 60;
 
-const Habit = ({ habit }) => {
+const Habit = ({ habit, user }) => {
   const [set, reset] = useState(true);
   const [newHeight, setNewHeight] = useState(60);
   const [descriptionHidden, setDescriptionHidden] = useState(false);
