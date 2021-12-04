@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Text, StyleSheet, View, Dimensions, ImageBackground, } from "react-native";
+import { StyleSheet, View, Dimensions, ImageBackground, } from "react-native";
 import { addTips } from "../services/tips-service/TipsServiceHandler";
 
 import { Form, FormItem } from 'react-native-form-component';
