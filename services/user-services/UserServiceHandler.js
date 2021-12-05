@@ -1,6 +1,7 @@
 import Users from '../../entities/Users';
 
 export const addUsers = async user => {
+  user.score = 0;
   const response = await fetch(
     'https://pulihack-default-rtdb.europe-west1.firebasedatabase.app/users.json',
     {
@@ -138,6 +139,6 @@ export const updateUser = user => {
     }
   )
     .then(res => res.json())
-    .then(data => {})
+    .then(data => { })
     .catch(err => console.log(err));
 };
