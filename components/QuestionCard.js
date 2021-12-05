@@ -1,61 +1,69 @@
-import forest_image from '../images/forest2.png';
-import { StyleSheet, View, Dimensions, ImageBackground } from 'react-native';
-import React, { useState } from 'react';
-import QuestionAnswersList from './QuestionAnswersList';
-import { useDispatch } from 'react-redux';
-import { answerProcessing } from '../store/actions';
+import forest_image from "../images/forest2.png";
+import { StyleSheet, View, Dimensions, ImageBackground } from "react-native";
+import React, { useState } from "react";
+import QuestionAnswersList from "./QuestionAnswersList";
+import { useDispatch } from "react-redux";
+import { answerProcessing } from "../store/actions";
 
-var width = Dimensions.get('window').width; //full width
-var height = Dimensions.get('window').height; //full height
+var width = Dimensions.get("window").width; //full width
+var height = Dimensions.get("window").height; //full height
 
 const questions = [
   {
-    question: 'Intrebare 1',
+    question:
+      "How often do you incorrectly dispose worn out batteries and ink cartridges?",
     answers: [
-      { id: 1, value: 'Raspuns 1' },
-      { id: 2, value: 'Raspuns 2' },
-      { id: 3, value: 'Raspuns 3' },
-      { id: 4, value: 'Raspuns 4' },
+      { id: 1, value: "Never" },
+      { id: 2, value: "Sometimes" },
+      { id: 3, value: "Often" },
+      { id: 4, value: "Always" },
     ],
     hasBeenBefore: true,
   },
   {
-    question: 'Intrebare 2',
+    question:
+      "Do you usually leave your electronic devices (TV, Phone, Tablet etc.) running when you are not using them?",
     answers: [
-      { id: 1, value: 'Raspuns 4' },
-      { id: 2, value: 'Raspuns 3' },
-      { id: 3, value: 'Raspuns 2' },
-      { id: 4, value: 'Raspuns 1' },
+      { id: 1, value: "No, I close them everytime I do not use them." },
+      { id: 2, value: "I, sometimes, forget to turn them off." },
+      { id: 3, value: "Yes, I leave them running all the time." },
     ],
     hasBeenBefore: false,
   },
   {
-    question: 'Intrebare 3',
+    question: "Do you overshop? (buy more things than you actually need)",
     answers: [
-      { id: 1, value: 'Raspuns 4' },
-      { id: 2, value: 'Raspuns 3' },
-      { id: 3, value: 'Raspuns 2' },
-      { id: 4, value: 'Raspuns 1' },
+      {
+        id: 1,
+        value: "Yes. You never know when you need them!",
+      },
+      {
+        id: 2,
+        value: "Sometimes when I forget to do a shopping list.",
+      },
+      { id: 3, value: "Never. I always buy exactly what I need." },
     ],
     hasBeenBefore: false,
   },
   {
-    question: 'Intrebare 4',
+    question: "Do you always drive to your workplace?",
     answers: [
-      { id: 1, value: 'Raspuns 4' },
-      { id: 2, value: 'Raspuns 3' },
-      { id: 3, value: 'Raspuns 2' },
-      { id: 4, value: 'Raspuns 1' },
+      { id: 1, value: "Yes! My car is my best friend." },
+      { id: 2, value: "Sometimes if I am in a hurry." },
+      { id: 3, value: "I usually use the public transportation." },
+      { id: 4, value: "No! Never, I prefer walking." },
     ],
     hasBeenBefore: false,
   },
   {
-    question: 'Intrebare 5',
+    question: "Do you usually forget to turn off the lights or water?",
     answers: [
-      { id: 1, value: 'Raspuns 4' },
-      { id: 2, value: 'Raspuns 3' },
-      { id: 3, value: 'Raspuns 2' },
-      { id: 4, value: 'Raspuns 1' },
+      {
+        id: 1,
+        value: "Yes. I always forget some lights on when I go downtown.",
+      },
+      { id: 2, value: "Sometimes, if I am really sleepy." },
+      { id: 3, value: "Never! I always double check them before I go out." },
     ],
     hasBeenBefore: false,
   },
@@ -91,7 +99,7 @@ const QuestionCard = () => {
       <ImageBackground
         source={forest_image}
         style={imageStyle}
-        resizeMode="cover"
+        resizeMode='cover'
         blurRadius={1}
       >
         <QuestionAnswersList
@@ -106,12 +114,12 @@ const QuestionCard = () => {
 
 const styles = StyleSheet.create({
   imageStyle: {
-    alignItems: 'center',
-    justifyContent: 'center',
+    alignItems: "center",
+    justifyContent: "center",
     width: width,
     height: height + 100,
     flex: 1,
-    justifyContent: 'center',
+    justifyContent: "center",
   },
 });
 
