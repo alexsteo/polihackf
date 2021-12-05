@@ -42,7 +42,7 @@ const LoginForm = () => {
         style={imageStyle}
         blurRadius={1}
       >
-        <Image source={our_amazing_logo} style={styles.logoStyle} />
+        <Image resizeMode='contain' source={our_amazing_logo} style={styles.logoStyle} />
         <Form
           onButtonPress={onSubmitForm}
           buttonStyle={{
@@ -94,8 +94,9 @@ const styles = StyleSheet.create({
   },
   logoStyle: {
     marginBottom: 50,
-    width: "40%",
+    width: "50%",
     height: "40%",
+    
   },
 });
 
