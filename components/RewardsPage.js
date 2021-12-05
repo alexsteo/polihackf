@@ -1,4 +1,7 @@
 import React, { useEffect, useState } from 'react';
+import { fetchRewards } from '../services/reward-services/RewardServiceHandler';
+import { updateUser } from '../services/user-services/UserServiceHandler';
+import { useSelector } from 'react-redux';
 import {
   Image,
   FlatList,
@@ -12,14 +15,12 @@ import {
 
 import forest_image from '../images/forest2.png';
 
-import { fetchRewards } from '../services/reward-services/RewardServiceHandler';
-
 var width = Dimensions.get('window').width; //full width
 var height = Dimensions.get('window').height; //full height
 
 const imageData = require('../assets/imageData.json');
 
-const Item = ({ reward }) => (
+const Item = ({ reward, user, buyItem }) => (
   <View style={styles.containerItem}>
     <Image
       style={{ flex: 1, width: 80, height: 80, resizeMode: 'contain' }}
@@ -30,19 +31,32 @@ const Item = ({ reward }) => (
       <Text style={{ color: '#585858' }}>{reward.description}</Text>
       <Text style={{ color: '#585858' }}>Price: {reward.points}</Text>
     </View>
-    <TouchableOpacity style={styles.btnContainer}>
+
+    <TouchableOpacity
+      style={styles.btnContainer}
+      onPress={() => buyItem(reward)}
+    >
       <Text style={styles.btn}>Buy</Text>
     </TouchableOpacity>
   </View>
 );
 const RewardsPage = () => {
+  const user = useSelector(state => state.auth.user);
   const [rewards, setRewards] = useState([]);
-  const renderItem = ({ item }) => <Item reward={item} />;
+  const renderItem = ({ item }) => (
+    <Item reward={item} user={user} buyItem={buyItem} />
+  );
 
   useEffect(async () => {
     setRewards(await fetchRewards());
     console.log(rewards);
   }, []);
+
+  const buyItem = reward => {
+    user.score -= reward.points;
+    updateUser(user);
+    setRewards(rewards.filter(rew => rew.name !== reward.name));
+  };
 
   return (
     <ImageBackground
@@ -51,6 +65,10 @@ const RewardsPage = () => {
       style={imageStyle}
       blurRadius={1}
     >
+      <Text style={{ marginTop: 50, fontSize: 18, textAlign: 'center' }}>
+        Reward Points: {user.score}
+      </Text>
+
       <FlatList
         data={rewards}
         renderItem={renderItem}

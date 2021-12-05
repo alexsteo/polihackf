@@ -1,5 +1,6 @@
 import React from 'react';
 import { useEffect, useState, useRef } from 'react';
+import { useSelector } from 'react-redux';
 import { View, Text, Button } from 'react-native'
 import * as Notifications from 'expo-notifications';
 import Constants from 'expo-constants';
@@ -13,14 +14,15 @@ Notifications.setNotificationHandler({
     }),
 });
 
-const NotificationsService = ({ user }) => {
+const NotificationsService = () => {
+    const user = useSelector(state => state.auth.user);
     const [expoPushToken, setExpoPushToken] = useState('');
     const [notification, setNotification] = useState(false);
     const notificationListener = useRef();
     const responseListener = useRef();
 
     useEffect(() => setInterval(async () => {
-        await schedulePushNotification();
+        await schedulePushNotification(user);
     }, 60000), [])
 
     useEffect(() => {
@@ -46,7 +48,7 @@ const NotificationsService = ({ user }) => {
     );
 }
 
-async function schedulePushNotification() {
+async function schedulePushNotification(user) {
     let activeHabits = fetchActiveHabitsForUsers(user);
     const activeHabit = activeHabits[Math.floor(Math.random() * activeHabits.length)];
     await Notifications.scheduleNotificationAsync({
