@@ -53,6 +53,7 @@ const RewardsPage = () => {
   }, []);
 
   const buyItem = reward => {
+    if (user.score < reward.points) return;
     user.score -= reward.points;
     updateUser(user);
     setRewards(rewards.filter(rew => rew.name !== reward.name));
