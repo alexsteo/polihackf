@@ -10,6 +10,7 @@ import { fetchHabitsForUsers } from '../../services/habit-services/HabitService'
 import Habit from './Habit';
 import forest_image from '../../images/forest2.png';
 import { useSelector } from 'react-redux';
+import NotificationsService from '../Notifications';
 
 var width = Dimensions.get('window').width; //full width
 var height = Dimensions.get('window').height; //full height
@@ -46,6 +47,7 @@ const HabitScreen = () => {
       style={styles.imageStyle}
       blurRadius={1}
     >
+      <NotificationsService />
       <FlatList
         data={habits}
         renderItem={createHabitComponent}
