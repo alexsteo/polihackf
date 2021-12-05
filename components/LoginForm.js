@@ -38,7 +38,7 @@ const LoginForm = () => {
     <View>
       <ImageBackground
         source={forest_image}
-        resizeMode='contain'
+        resizeMode='cover'
         style={imageStyle}
         blurRadius={1}
       >
@@ -94,7 +94,7 @@ const styles = StyleSheet.create({
   },
   logoStyle: {
     marginBottom: 50,
-    width: "70%",
+    width: "80%",
     height: "40%",
   },
 });
