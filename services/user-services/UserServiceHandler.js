@@ -16,6 +16,72 @@ export const addUsers = async user => {
     throw new Error('Something went wrong!');
   }
 
+  addedUser = (await fetchUsers()).filter(usr => usr.username === user.username)[0];
+  const hu1 = {
+    habit: "aaazaza",
+    user: addedUser.key,
+    rating: 0,
+    notifications: false
+  }
+  const hu2 = {
+    habit: "asdagffasdgasg",
+    user: addedUser.key,
+    rating: 0,
+    notifications: false
+  }
+  const hu3 = {
+    habit: "d mfmgbj,lkfhnjkagbj",
+    user: addedUser.key,
+    rating: 0,
+    notifications: false
+  }
+
+  const response1 = await fetch(
+    'https://pulihack-default-rtdb.europe-west1.firebasedatabase.app/habit_user.json',
+    {
+      method: 'POST',
+      headers: {
+        'Content-type': 'application/json',
+      },
+      body: JSON.stringify({ ...hu1 }),
+    }
+  );
+
+  if (!response1.ok) {
+    throw new Error('Something went wrong!');
+  }
+
+  const response2 = await fetch(
+    'https://pulihack-default-rtdb.europe-west1.firebasedatabase.app/habit_user.json',
+    {
+      method: 'POST',
+      headers: {
+        'Content-type': 'application/json',
+      },
+      body: JSON.stringify({ ...hu2 }),
+    }
+  );
+
+  if (!response2.ok) {
+    throw new Error('Something went wrong!');
+  }
+
+  const response3 = await fetch(
+    'https://pulihack-default-rtdb.europe-west1.firebasedatabase.app/habit_user.json',
+    {
+      method: 'POST',
+      headers: {
+        'Content-type': 'application/json',
+      },
+      body: JSON.stringify({ ...hu3 }),
+    }
+  );
+
+  if (!response3.ok) {
+    throw new Error('Something went wrong!');
+  }
+
+  user.key = addedUser.key;
   return user;
 };
 
