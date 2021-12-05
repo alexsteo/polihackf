@@ -26,7 +26,7 @@ const NotificationsService = () => {
       if (user) {
         await schedulePushNotification(user).catch(err => console.log(err));
       }
-    }, 10000);
+    }, 30000);
   }, [user]);
 
   useEffect(() => {
@@ -54,7 +54,7 @@ const NotificationsService = () => {
 };
 
 async function schedulePushNotification(user) {
-  let activeHabits = fetchActiveHabitsForUsers(user);
+  let activeHabits = await fetchActiveHabitsForUsers(user);
   const activeHabit =
     activeHabits[Math.floor(Math.random() * activeHabits.length)];
   await Notifications.scheduleNotificationAsync({

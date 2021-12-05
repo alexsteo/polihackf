@@ -20,6 +20,8 @@ const styles = StyleSheet.create({
     overflow: 'hidden',
     marginVertical: 10,
     padding: 20,
+    height: 100,
+    width: 350,
   },
   title: {
     fontSize: 18,
