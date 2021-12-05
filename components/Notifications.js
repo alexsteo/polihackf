@@ -1,7 +1,7 @@
 import React from 'react';
 import { useEffect, useState, useRef } from 'react';
 import { useSelector } from 'react-redux';
-import { View, Text, Button } from 'react-native';
+import { View } from 'react-native';
 import * as Notifications from 'expo-notifications';
 import Constants from 'expo-constants';
 import { fetchActiveHabitsForUsers } from '../services/habit-services/HabitService';
@@ -21,13 +21,13 @@ const NotificationsService = () => {
   const notificationListener = useRef();
   const responseListener = useRef();
 
-  useEffect(
-    () =>
-      setInterval(async () => {
-        await schedulePushNotification(user);
-      }, 10000),
-    []
-  );
+  useEffect(() => {
+    setInterval(async () => {
+      if (user) {
+        await schedulePushNotification(user).catch(err => console.log(err));
+      }
+    }, 10000);
+  }, [user]);
 
   useEffect(() => {
     registerForPushNotificationsAsync().then(token => setExpoPushToken(token));
