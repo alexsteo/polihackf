@@ -42,7 +42,7 @@ const tabScreenConfig = {
       },
     },
   },
-  Points: {
+  Tree: {
     screen: TreePage,
     navigationOptions: {
       tabBarIcon: tabInfo => {

@@ -20,18 +20,18 @@ var height = Dimensions.get('window').height; //full height
 const imageData = require('../assets/imageData.json');
 
 const Item = ({ reward }) => (
-  <View style={{ marginTop: 50, flexDirection: 'row' }}>
+  <View style={styles.containerItem}>
     <Image
       style={{ flex: 1, width: 80, height: 80, resizeMode: 'contain' }}
       source={{ uri: imageData[reward.img] }}
     />
     <View style={{ flex: 1 }}>
-      <Text>Name: {reward.name}</Text>
-      <Text>Description: {reward.description}</Text>
-      <Text>Price: {reward.points}</Text>
+      <Text style={{ fontWeight: 'bold' }}>{reward.name}</Text>
+      <Text style={{ color: '#585858' }}>{reward.description}</Text>
+      <Text style={{ color: '#585858' }}>Price: {reward.points}</Text>
     </View>
     <TouchableOpacity style={styles.btnContainer}>
-      <Text>Buy</Text>
+      <Text style={styles.btn}>Buy</Text>
     </TouchableOpacity>
   </View>
 );
@@ -45,37 +45,47 @@ const RewardsPage = () => {
   }, []);
 
   return (
-    <View>
-      {/* <ImageBackground
-        source={forest_image}
-        resizeMode="cover"
-        style={styles.imageStyle}
-        blurRadius={1}
-      > */}
+    <ImageBackground
+      source={forest_image}
+      resizeMode="cover"
+      style={imageStyle}
+      blurRadius={1}
+    >
       <FlatList
         data={rewards}
         renderItem={renderItem}
         keyExtractor={item => item.key}
       />
-      {/* </ImageBackground> */}
-    </View>
+    </ImageBackground>
   );
 };
 const styles = StyleSheet.create({
+  containerItem: {
+    marginTop: 50,
+    flexDirection: 'row',
+    backgroundColor: '#f5f5f5',
+    padding: 10,
+    borderRadius: 25,
+  },
   btnContainer: {
     alignSelf: 'center',
     padding: 10,
-    backgroundColor: '#EDEAC2',
+    margin: 5,
+    backgroundColor: '#0074CC',
+    borderRadius: 25,
+  },
+  btn: {
+    color: 'white',
   },
   imageStyle: {
-    paddingTop: '60%',
-    alignItems: 'center',
-    justifyContent: 'center',
+    paddingHorizontal: 25,
+    paddingTop: '10%',
     width: width,
     height: height + 100,
     flex: 1,
-    justifyContent: 'center',
   },
 });
+
+const imageStyle = StyleSheet.compose(styles.imageStyle);
 
 export default RewardsPage;

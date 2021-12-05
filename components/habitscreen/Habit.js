@@ -130,7 +130,7 @@ const Habit = ({ habit, user }) => {
 const styles = StyleSheet.create({
   viewStyle: {
     marginTop: 30,
-    backgroundColor: 'green',
+    backgroundColor: 'rgba(50, 200, 160, 0.7)',
     flex: 1,
     flexDirection: 'row',
     borderRadius: 25,
@@ -149,7 +149,7 @@ const styles = StyleSheet.create({
     margin: 7.5,
     fontSize: 24,
     alignContent: 'center',
-    color: '#00ff00',
+    color: '#105657',
     opacity: 1,
   },
   icon: {
