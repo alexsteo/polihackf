@@ -16,16 +16,16 @@ var width = Dimensions.get("window").width; //full width
 var height = Dimensions.get("window").height; //full height
 
 const SpinnerThingy = () => {
-  // const dispatch = useDispatch();
-  // useEffect(() => {
-  //   const timerId = setTimeout(() => {
-  //     dispatch(answerProcessingDone());
-  //   }, 2500);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    const timerId = setTimeout(() => {
+      dispatch(answerProcessingDone());
+    }, 2500);
 
-  //   return () => {
-  //     clearTimeout(timerId);
-  //   };
-  // }, []);
+    return () => {
+      clearTimeout(timerId);
+    };
+  }, []);
   return (
     <View style={[styles.container, styles.horizontal]}>
       <ImageBackground
