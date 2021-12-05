@@ -50,19 +50,19 @@ export const fetchUsers = async () => {
   return users;
 };
 
-export const updateUser = (user) => {
-
+export const updateUser = user => {
   u = JSON.stringify({
     score: user.score,
     username: user.username,
     firstName: user.firstName,
     lastName: user.lastName,
     password: user.password,
-    email: user.email
+    email: user.email,
   });
   u = `{"${user.key}" : ${u}}`;
 
-  fetch(`https://pulihack-default-rtdb.europe-west1.firebasedatabase.app/users.json`,
+  fetch(
+    `https://pulihack-default-rtdb.europe-west1.firebasedatabase.app/users.json`,
     {
       method: 'PATCH',
       headers: {
@@ -70,5 +70,8 @@ export const updateUser = (user) => {
       },
       body: u,
     }
-  ).then(res => res.json()).then(data => { }).catch(err => console.log(err))
-}
+  )
+    .then(res => res.json())
+    .then(data => {})
+    .catch(err => console.log(err));
+};
