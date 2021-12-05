@@ -36,6 +36,9 @@ const HabitScreen = () => {
       )
     );
     setHabits(hab);
+    if (hab.length === 0) {
+      initializeHabits();
+    }
   };
 
   const createHabitComponent = ({ item }) => <Habit habit={item} user={user} />;
