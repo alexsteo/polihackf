@@ -34,7 +34,7 @@ const SpinnerThingy = () => {
         style={styles.imageStyle}
         blurRadius={1}
       >
-        <Image source={our_amazing_logo} style={styles.logoStyle} />
+        <Image  resizeMode='contain' source={our_amazing_logo} style={styles.logoStyle} />
         <View style={{ position: "absolute", top: "50%", left: "50%" }}>
           <ActivityIndicator size='large' color='blue' />
         </View>
