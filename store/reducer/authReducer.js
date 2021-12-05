@@ -3,6 +3,7 @@ import {
   LOGOUT,
   REGISTER,
   ANSWER_PROCESSING_START,
+  HABIT_INC,
 } from '../actions/types';
 
 const INIT_STATE = {
@@ -20,6 +21,8 @@ const authReducer = (state = INIT_STATE, action) => {
       return { ...state, user: null };
     case ANSWER_PROCESSING_START:
       return { ...state, register: false };
+    case HABIT_INC:
+      return { ...state, user: { ...state.user, score: state.user.score } };
     default:
       return state;
   }

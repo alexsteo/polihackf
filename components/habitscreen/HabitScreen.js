@@ -63,7 +63,7 @@ const HabitScreen = () => {
 const styles = StyleSheet.create({
   imageStyle: {
     paddingHorizontal: 25,
-    paddingTop: '25%',
+    paddingVertical: '25%',
     alignItems: 'center',
     justifyContent: 'center',
     width: width,

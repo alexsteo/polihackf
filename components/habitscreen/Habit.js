@@ -3,15 +3,19 @@ import { StyleSheet, Dimensions, Text, View, Share } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { updateHabit } from '../../services/habit-services/HabitService';
 import { updateUser } from '../../services/user-services/UserServiceHandler';
+import { habitInc } from '../../store/actions';
+
+import { useDispatch } from 'react-redux';
 
 var width = Dimensions.get('window').width; //full width
-let height = 60;
 
 const Habit = ({ habit, user }) => {
   const [set, reset] = useState(true);
-  const [newHeight, setNewHeight] = useState(60);
+  const [newHeight, setNewHeight] = useState(120);
   const [descriptionHidden, setDescriptionHidden] = useState(false);
   const [showLike, setShowLike] = useState(true);
+
+  const dispatch = useDispatch();
 
   const getNotificationsIcon = () => {
     if (habit.notifications === true)
@@ -47,10 +51,11 @@ const Habit = ({ habit, user }) => {
     updateUser(user);
     setShowLike(!showLike);
     reset(!set);
+    dispatch(habitInc());
   };
 
   const changeHeight = () => {
-    setNewHeight(230 - newHeight);
+    setNewHeight(430 - newHeight);
     setDescriptionHidden(!descriptionHidden);
   };
 
@@ -132,7 +137,7 @@ const styles = StyleSheet.create({
     marginTop: 30,
     backgroundColor: 'rgba(50, 200, 160, 0.7)',
     flex: 1,
-    flexDirection: 'row',
+    flexDirection: 'column',
     borderRadius: 25,
     alignItems: 'center',
     justifyContent: 'center',
@@ -144,6 +149,7 @@ const styles = StyleSheet.create({
     fontSize: 24,
     alignContent: 'center',
     opacity: 1,
+    textAlign: 'center',
   },
   ratingStyle: {
     margin: 7.5,
