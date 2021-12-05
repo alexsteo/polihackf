@@ -4,6 +4,7 @@ import {
   REGISTER,
   ANSWER_PROCESSING_START,
   ANSWER_PROCESSING_DONE,
+  HABIT_INC,
 } from './types';
 
 export const register = user => {
@@ -35,5 +36,11 @@ export const answerProcessing = () => {
 export const answerProcessingDone = () => {
   return {
     type: ANSWER_PROCESSING_DONE,
+  };
+};
+
+export const habitInc = () => {
+  return {
+    type: HABIT_INC,
   };
 };
